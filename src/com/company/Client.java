@@ -8,7 +8,6 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
 
-//        String string = "1+1";
         Socket socket = new Socket("localhost", 2007);
 
         DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
@@ -20,7 +19,7 @@ public class Client {
             String string = scan.next();
             System.out.print(string + "=");
             dataOutputStream.writeUTF(string);
-            System.out.println(dataInputStream.read());
+            System.out.println(dataInputStream.readInt());
 
         }
     }
